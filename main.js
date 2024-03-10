@@ -20,11 +20,12 @@ let pickedPaper = document.getElementById('paperbtn');
 let pickedScissor = document.getElementById('scissorbtn');
 
 
-
+//user selected the rock button
 pickedRock.addEventListener('click',()=>{
     let displayRock = document.getElementById('you-picked');
     displayRock.innerHTML = '<img src="Images/Group 6.png" alt="stone" srcset="">';
     console.log('pickd rock');
+
     let options = document.getElementById('options');
     options.style.display = 'none';
     
@@ -32,7 +33,12 @@ pickedRock.addEventListener('click',()=>{
     showRound.style.display = 'flex';
     showRound.style.justifyContent = 'space-around';
 
+    let showtitle = document.getElementById('match-title');
+    showtitle.style.display = 'flex';
+
 });
+
+//user selected the paper button
 pickedPaper.addEventListener('click',()=>{
     let displayPaper =document.getElementById('you-picked');
     displayPaper.innerHTML = '<img src="Images/Group 8.png" alt="paper" srcset="">';
@@ -45,8 +51,12 @@ pickedPaper.addEventListener('click',()=>{
     showRound.style.display = 'flex';
     showRound.style.justifyContent = 'space-around';
 
+    let showtitle = document.getElementById('match-title');
+    showtitle.style.display = 'flex';
+
 })
 
+//user selected the scissor button
 pickedScissor.addEventListener('click',()=>{
     let displayScissor = document.getElementById('you-picked');
     displayScissor.innerHTML ='<img src="Images/Group 7.png" alt="scissor" srcset="">';
@@ -58,7 +68,12 @@ pickedScissor.addEventListener('click',()=>{
     let showRound = document.getElementById('match-area')
     showRound.style.display = 'flex';
     showRound.style.justifyContent = 'space-around';
+
+    let showtitle = document.getElementById('match-title');
+    showtitle.style.display = 'flex';
 })
+
+//computer selects/picks the random button
 
 let compicked = ['pickedRock', 'pickedPaper', 'pickedScissor'];
 
@@ -74,3 +89,5 @@ let compicked = ['pickedRock', 'pickedPaper', 'pickedScissor'];
     }else if(compickedRandom == 'pickedScissor'){
         comDisplay.innerHTML = '<img src="Images/Group 8.png" alt="scissor" srcset="">';
     }
+
+

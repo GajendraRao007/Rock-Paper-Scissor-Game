@@ -66,6 +66,7 @@ h1{
     height: 335px;
     border-radius: 13px;
     position: absolute;
+    bottom: 60px;
     right: 38px;
     margin-top: -390px;
     display: none;
@@ -114,9 +115,27 @@ li::marker {
     margin-top: -30px;
     margin-right: 38px;
     position: absolute;
-    right: 0;
+    right: 0px;
+    bottom: 6px;
     cursor: pointer;
 }
+
+/* #Next-btn{
+    padding: 10px 30px;
+    font-size: 21px;
+    border-radius: 10px;
+    letter-spacing: 5px;
+    color: white;
+    border: 2px solid white;
+    background-color: transparent;
+    margin-top: -30px;
+    margin-right: 38px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    cursor: pointer;
+    display: none;
+} */
 
 .select-options{
     display: flex;
@@ -131,29 +150,25 @@ li::marker {
 }
 
 .line1{
-    border: 10px solid #000000A3;
     transform: rotate(90deg);
     z-index: -1;
+    width: 20px;
 }
 .line2{
-    border: 10px solid #000000A3;
     transform: rotate(330deg);
     z-index: -1;
-    height: 180px;
-    margin-top: -100px;
-    position: relative;
-    left: 50px;
+    margin-top: -150px;
+    width: 20px;
+    height: 200px;
 }
 
 .line3{
-    border: 10px solid #000000A3;
-    color: transparent;
     transform: rotate(30deg);
     z-index: -1;
     height: 180px;
-    margin-top: -100px;
-    position: relative;
-    left: -50px;
+    margin-top: -150px;
+    height: 200px;
+    width: 20px;
 }
 
 
@@ -161,8 +176,10 @@ li::marker {
 
 #match-area{
      align-items: center;
-    margin-top: 100px;
+    margin-top: 0px;
     display: none;
+    margin-left: 180px;
+    margin-right: 180px;
 }
 
 #play-again{
@@ -191,4 +208,21 @@ li::marker {
 .txt{
     font-size: 20px;
     letter-spacing: 2px;
+}
+
+h5{
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 20px;
+    letter-spacing: 0.1em;
+    margin-top: 90px;
+    color: white;
+    padding: 0;
+
+}
+
+#match-title{
+    display: flex;
+    justify-content: space-around;
+    display: none;
 }
