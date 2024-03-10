@@ -143,12 +143,12 @@ li::marker {
     margin-top: -100px;
     position: relative;
     left: 50px;
-    
 }
 
 .line3{
     border: 10px solid #000000A3;
-    transform: rotate(-330deg);
+    color: transparent;
+    transform: rotate(30deg);
     z-index: -1;
     height: 180px;
     margin-top: -100px;
@@ -160,10 +160,7 @@ li::marker {
 /*Match area*/
 
 #match-area{
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    /* padding: 50px; */
+     align-items: center;
     margin-top: 100px;
     display: none;
 }

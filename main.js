@@ -30,6 +30,7 @@ pickedRock.addEventListener('click',()=>{
     
     let showRound = document.getElementById('match-area')
     showRound.style.display = 'flex';
+    showRound.style.justifyContent = 'space-around';
 
 });
 pickedPaper.addEventListener('click',()=>{
@@ -42,6 +43,8 @@ pickedPaper.addEventListener('click',()=>{
 
     let showRound = document.getElementById('match-area')
     showRound.style.display = 'flex';
+    showRound.style.justifyContent = 'space-around';
+
 })
 
 pickedScissor.addEventListener('click',()=>{
@@ -54,6 +57,7 @@ pickedScissor.addEventListener('click',()=>{
 
     let showRound = document.getElementById('match-area')
     showRound.style.display = 'flex';
+    showRound.style.justifyContent = 'space-around';
 })
 
 let compicked = ['pickedRock', 'pickedPaper', 'pickedScissor'];
