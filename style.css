@@ -1,6 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Syne:wght@400..800&display=swap');
+
 body{
     margin: 0;
     padding: 0;
     background-color: #8CC461;
+    font-family: "Roboto", sans-serif;
+    
 }
 
+.box{
+    border: 2px solid white;
+    width: 800px;
+    margin: 0 auto;
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+}
+
+h1{
+    font-size: 40px;
+    margin: 0;
+    font-weight: 600;
+    color: white;
+    padding: 0;
+    letter-spacing: 4px;
+}
+
+#Computer-Score-display{
+    width: 139px;
+    height: 120px;
+    border-radius: 9px;
+    background-color: white;
+    color: #656565;
+    font-size: 15px;
+    font-weight: 700;
+    text-align: center;
+    padding: 7px;
+    letter-spacing: 2px;
+    margin-right: 29px;
+}
+#Your-Score-display{
+    width: 139px;
+    height: 120px;
+    border-radius: 9px;
+    background-color: white;
+    color: #656565;
+    font-size: 15px;
+    font-weight: 700;
+    text-align: center;
+    padding: 7px;
+    letter-spacing: 2px;
+}
+
+.Score-box{
+    display: flex;
+    
+}
+
+.rules-box{
+    background-color: #004429;
+    border: 7px solid white;
+    width: 278px;
+    height: 335px;
+    border-radius: 13px;
+    position: absolute;
+    right: 38px;
+    margin-top: -390px;
+    display: none;
+}
+
+h4{
+    text-align: center;
+    font-size: 29px;
+    color: white;
+}
+
+#cancel-btn{
+    position: absolute;
+    right: -30px;
+    top: -40px;
+}
+
+ul{
+  margin-top: -20px;
+}
+
+li{
+    font-size: 13px;
+    color: white;
+    margin-bottom: 10px;
+    padding: 2px;
+    padding-right: 10px;
+    font-weight: 400;
+    
+    
+}
+
+li::marker {
+    color: #FFD600;
+   font-size: 15px;
+}
+
+#Rules-btn{
+    padding: 10px 30px;
+    font-size: 21px;
+    border-radius: 10px;
+    letter-spacing: 5px;
+    color: white;
+    border: 2px solid white;
+    background-color: transparent;
+    margin-top: -30px;
+    margin-right: 38px;
+    position: absolute;
+    right: 0;
+    cursor: pointer;
+}
+
+.select-options{
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+}
+
+.select-options-2{
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+}
+
+.line1{
+    border: 10px solid #000000A3;
+    transform: rotate(90deg);
+    z-index: -1;
+}
+.line2{
+    border: 10px solid #000000A3;
+    transform: rotate(330deg);
+    z-index: -1;
+    height: 180px;
+    margin-top: -100px;
+    position: relative;
+    left: 50px;
+    
+}
+
+.line3{
+    border: 10px solid #000000A3;
+    transform: rotate(-330deg);
+    z-index: -1;
+    height: 180px;
+    margin-top: -100px;
+    position: relative;
+    left: -50px;
+}
