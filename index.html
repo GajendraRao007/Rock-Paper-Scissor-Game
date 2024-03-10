@@ -8,6 +8,9 @@
 </head>
 <body>
     <div  class="container">
+        
+        <!--Display Scores-->
+
         <div class="box">
             <div class="headings">
                 <h1>ROCK</h1>
@@ -20,16 +23,21 @@
             </div>
         </div>
 
-        <div class="select-options">
-            <a href="#"><img src="Images\Group 6.png" alt="stone" srcset=""></a>
-            <div class="line1"></div>
-            <a href="#"><img src="Images\Group 7.png" alt="scissor" srcset=""></a>
+        <!--Select Options-->
+        <div id="options">
+            <div class="select-options">
+                <a href="#" id="rockbtn"><img src="Images\Group 6.png" alt="rock" srcset=""></a>
+                <div class="line1"></div>
+                <a href="#" id="scissorbtn"><img src="Images\Group 7.png" alt="scissor" srcset=""></a>
+            </div>
+            <div class="select-options-2">
+                <div class="line2"></div>
+                <a href="#" id="paperbtn"><img src="Images\Group 8.png" alt="paper" srcset=""></a>
+                <div class="line3"></div>
+            </div>
         </div>
-        <div class="select-options-2">
-            <div class="line2"></div>
-            <a href="#"><img src="Images\Group 8.png" alt="paper" srcset=""></a>
-            <div class="line3"></div>
-        </div>
+
+            <!--Rules-->
 
         <div id="rules-box">
             <a href="#" id="cancel-btn"><img src="Images\Group 9.png" alt="" srcset=""></a>
@@ -42,6 +50,23 @@
             </ul>
         </div>
         <button id="Rules-btn">RULES</button>
+
+
+        <div class="match-area">
+            <div id="you-picked"> <a href="#" id="rockbtn">
+                <!-- <img src="Images\Group 6.png" alt="Rock" srcset=""> -->
+            </a>
+            </div>
+            <div class="result">YOU WIN<br><span class="txt">AGAINST PC</span></div>
+           <div>
+               <button id="play-again">PLAY AGAIN</button>
+           </div> 
+            
+            <div id="Pc-picked"> <a href="#" id="scissorbtn">
+                <img src="Images\Group 7.png" alt="scissor" srcset=""></a>
+            </div>
+
+        </div>
 
     </div>
     
