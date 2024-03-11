@@ -47,6 +47,32 @@ function imgNum(playerPicked) {
 
 //computer selects/picks the random button
 
+function computerPicked() {
+    let compPicked = ['pickedRock', 'pickedPaper', 'pickedScissor'];
+    let computerpickedRandom = compPicked[Math.floor(Math.random() * compPicked.length)];
 
+    let displayElement = document.getElementById('Pc-picked');
+    displayElement.innerHTML = `<img src="Images/Group ${imgNum(computerpickedRandom)}.png" alt="${computerpickedRandom}" srcset="">`;
+
+    return computerpickedRandom;
+}
+
+// Function to determine the winner
+function play(playerPicked) {
+    let computerpickedRandom = computerPicked();
+
+    let resultElement = document.getElementById('result');
+    if (playerPicked === computerpickedRandom) {
+        resultElement.innerText = "TIE UP";
+    } else if (
+        (playerPicked === 'pickedRock' && computerpickedRandom === 'pickedScissor') ||
+        (playerPicked === 'pickedPaper' && computerpickedRandom === 'pickedRock') ||
+        (playerPicked === 'pickedScissor' && computerpickedRandom === 'pickedPaper')
+    ) {
+        resultElement.innerText = "YOU WIN";
+    } else {
+        resultElement.innerText = "YOU LOST";
+    }
+}
 
    
