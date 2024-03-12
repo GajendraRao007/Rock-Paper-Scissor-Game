@@ -124,6 +124,29 @@ function play(playerPicked) {
     compScoreDisplay.innerText = compScore;
 }
 
+//function to display the Winner's/Trophy Page  
+ 
+nextButton.addEventListener('click', ()=>{
+    let container = document.querySelector('.container')
+    container.style.display ='none';
 
- 
- 
+    let showWinnerPage = document.getElementById('Winner-page')
+    showWinnerPage.style.display = 'block';
+
+    let displayRulebtn = document.getElementById('Rules-btn')
+    displayRulebtn.style.display = 'block';
+});
+
+let ruleButtonWinnerPage = document.getElementById('Rules-btn-win-page')
+let cancelButtonWinnerPage = document.getElementById('cancel-btn-two')
+
+ruleButtonWinnerPage.addEventListener('click',()=>{
+    let rulesBoxWinnerPage = document.getElementById('rules-box-winner-page');
+    console.log('rule button clicked');
+    rulesBoxWinnerPage.style.display = 'block';
+})
+cancelButtonWinnerPage.addEventListener('click',()=>{
+    let rulesBoxWinnerPage = document.getElementById('rules-box-winner-page');
+    console.log('cancel button clicked');
+    rulesBoxWinnerPage.style.display = 'none';
+})

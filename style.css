@@ -268,6 +268,7 @@ h5{
 #Winner-page{
    margin: 0 auto;
    text-align: center;
+   display: none;
 }
 
 #txt1{
@@ -292,4 +293,39 @@ h5{
     border: none;
     background-color: white;
     cursor: pointer;
+}
+
+#Rules-btn-win-page{
+    padding: 10px 30px;
+    font-size: 21px;
+    border-radius: 10px;
+    letter-spacing: 5px;
+    color: white;
+    border: 2px solid white;
+    background-color: transparent;
+    margin-right: 38px;
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    bottom: 10px;
+}
+
+#rules-box-winner-page{
+    background-color: #004429;
+    border: 7px solid white;
+    width: 278px;
+    height: 335px;
+    border-radius: 13px;
+    position: absolute;
+    bottom: 60px;
+    right: 38px;
+    margin-top: -390px;
+    display: none;
+    z-index: 101;
+}
+
+#cancel-btn-two{
+    position: absolute;
+    right: -30px;
+    top: -40px;
 }
