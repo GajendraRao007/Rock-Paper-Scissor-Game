@@ -263,3 +263,33 @@ h5{
     opacity: 0;
 }
 
+/*Winners Page*/
+
+#Winner-page{
+   margin: 0 auto;
+   text-align: center;
+}
+
+#txt1{
+    font-size: 91px;
+    font-weight: 600;
+    color: white;
+}
+
+#txt2{
+    font-size: 41px;
+    font-weight: 600;
+    color: white;
+    margin-top: 25px;
+}
+
+#play-again-btn-win-page{
+    display: block;
+    margin: 50px auto;
+    padding: 14px 30px;
+    border-radius: 9px;
+    letter-spacing: 5px;
+    border: none;
+    background-color: white;
+    cursor: pointer;
+}
