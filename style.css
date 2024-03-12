@@ -79,6 +79,7 @@ h1{
     right: 38px;
     margin-top: -390px;
     display: none;
+    z-index: 101;
 }
 
 h4{
@@ -113,6 +114,13 @@ li::marker {
    font-size: 15px;
 }
 
+.allbtns{
+   position: absolute;
+   right: 0;
+   bottom: 10px;
+   z-index: 100;
+}
+
 #Rules-btn{
     padding: 10px 30px;
     font-size: 21px;
@@ -123,13 +131,10 @@ li::marker {
     background-color: transparent;
     margin-top: -30px;
     margin-right: 38px;
-    position: absolute;
-    right: 0px;
-    bottom: 6px;
     cursor: pointer;
 }
 
-/* #Next-btn{
+#Next-btn{
     padding: 10px 30px;
     font-size: 21px;
     border-radius: 10px;
@@ -137,14 +142,10 @@ li::marker {
     color: white;
     border: 2px solid white;
     background-color: transparent;
-    margin-top: -30px;
     margin-right: 38px;
-    position: absolute;
-    right: 0;
-    bottom: 0;
     cursor: pointer;
     display: none;
-} */
+}
 
 .options{
     display: none;
@@ -261,3 +262,4 @@ h5{
 #comp-Winner-Background{
     opacity: 0;
 }
+

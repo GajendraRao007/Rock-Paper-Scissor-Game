@@ -87,6 +87,9 @@ let compScore = 0;
 let userWinnerBackground ;
 let compWinnerBackground;
 
+//Next btn when the user wins the round
+let nextButton = document.getElementById('Next-btn');
+
 function play(playerPicked) {
     let computerpickedRandom = computerPicked();
     
@@ -108,7 +111,7 @@ function play(playerPicked) {
         resultElement.innerText = "YOU WIN";
         userScore++
         userWinnerBackground.style.opacity="100";
-      
+        nextButton.style.display = 'inline-flex';
 
     } else {
         resultElement.innerText = "YOU LOST";
