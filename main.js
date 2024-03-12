@@ -101,8 +101,12 @@ function play(playerPicked) {
 
     let resultElement = document.getElementById('result');
 
+    //PLAY AGAIN button text should be changed to REPLAY when the round  is TIE
+    let playbuttonTextChange = document.getElementById('play-again')
+
     if (playerPicked === computerpickedRandom) {
         resultElement.innerText = "TIE UP";
+        playbuttonTextChange.innerText = "REPLAY";
     } else if (
         (playerPicked === 'pickedRock' && computerpickedRandom === 'pickedScissor') ||
         (playerPicked === 'pickedPaper' && computerpickedRandom === 'pickedRock') ||
@@ -136,6 +140,8 @@ nextButton.addEventListener('click', ()=>{
     let displayRulebtn = document.getElementById('Rules-btn')
     displayRulebtn.style.display = 'block';
 });
+
+//rule button for winners page
 
 let ruleButtonWinnerPage = document.getElementById('Rules-btn-win-page')
 let cancelButtonWinnerPage = document.getElementById('cancel-btn-two')
