@@ -15,10 +15,9 @@ cancelButton.addEventListener('click',()=>{
 })
 
 //Picked options
-document.getElementById('rockbtn').addEventListener('click', () => userPicked('pickedRock'));
-document.getElementById('paperbtn').addEventListener('click', () => userPicked('pickedPaper'));
-document.getElementById('scissorbtn').addEventListener('click', () => userPicked('pickedScissor'))
-
+let userpickedRock = document.getElementById('rockbtn');
+let userpickedPaper =  document.getElementById('paperbtn');
+let userpickedScissor = document.getElementById('scissorbtn');
 
 function userPicked(playerPicked) {
     let displayElement = document.getElementById('you-picked');
@@ -37,31 +36,57 @@ function userPicked(playerPicked) {
     play(playerPicked);
 }
 
-
 // Function to get the image number 
 function imgNum(playerPicked) {
-    if (playerPicked === 'pickedRock') return 6;
-    if (playerPicked === 'pickedPaper') return 8;
-    if (playerPicked === 'pickedScissor') return 7;
+    if (playerPicked === 'pickedRock') {
+        return 6;
+    }
+    if (playerPicked === 'pickedPaper') {
+        return 8;
+    }
+    if (playerPicked === 'pickedScissor') {
+        return 7;
+    }
 }
 
-//computer selects/picks the random button
+userpickedRock.addEventListener('click',function(){
+    console.log('clicked rock button');
+    userPicked('pickedRock')
+})
+userpickedPaper.addEventListener('click',function(){
+    console.log('clicked paper button');
+    userPicked('pickedPaper')
+})
+userpickedScissor.addEventListener('click',function(){
+    console.log('clicked scissor button');
+    userPicked('pickedScissor')
+})
 
+
+//computer selects/picks the random button rock, paper or scissor
 function computerPicked() {
     let compPicked = ['pickedRock', 'pickedPaper', 'pickedScissor'];
     let computerpickedRandom = compPicked[Math.floor(Math.random() * compPicked.length)];
 
     let displayElement = document.getElementById('Pc-picked');
-    displayElement.innerHTML = `<img src="Images/Group ${imgNum(computerpickedRandom)}.png" alt="${computerpickedRandom}" srcset="">`;
+    displayElement.innerHTML = `<img src="Images/Group ${imgNum(computerpickedRandom)}.png" alt="" srcset="">`;
 
     return computerpickedRandom;
 }
 
-// Function to determine the winner
+
+// Function to see who is the winner, loser or tie & display scores for user & comp
+let userScore = 0;
+let compScore = 0;
+
+
 function play(playerPicked) {
     let computerpickedRandom = computerPicked();
-
+    
+    let userScoreDisplay = document.getElementById('User-Score-display');
+    let compScoreDisplay = document.getElementById('Comp-Score-display');
     let resultElement = document.getElementById('result');
+
     if (playerPicked === computerpickedRandom) {
         resultElement.innerText = "TIE UP";
     } else if (
@@ -70,9 +95,17 @@ function play(playerPicked) {
         (playerPicked === 'pickedScissor' && computerpickedRandom === 'pickedPaper')
     ) {
         resultElement.innerText = "YOU WIN";
+        userScore++
     } else {
         resultElement.innerText = "YOU LOST";
+        compScore++
     }
+
+    
+    userScoreDisplay.innerText = userScore;
+    compScoreDisplay.innerText = compScore;
 }
 
-   
+
+ 
+ 

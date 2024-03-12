@@ -54,6 +54,15 @@ h1{
     letter-spacing: 2px;
 }
 
+#Comp-Score-display{
+    font-size: 80px;
+    color: #252525;
+}
+#User-Score-display{
+    font-size: 80px;
+    color: #252525;
+}
+
 .Score-box{
     display: flex;
     
