@@ -159,6 +159,7 @@ li::marker {
     display: flex;
     justify-content: center;
     margin-top: 60px;
+    
 }
 
 .line1{
@@ -187,8 +188,7 @@ li::marker {
 /*Match area*/
 
 #match-area{
-     align-items: center;
-    margin-top: 0px;
+    align-items: center;
     display: none;
     margin-left: 180px;
     margin-right: 180px;
@@ -230,11 +230,34 @@ h5{
     margin-top: 90px;
     color: white;
     padding: 0;
-
+    z-index: 100;
 }
 
 #match-title{
     display: flex;
     justify-content: space-around;
     display: none;
+    z-index: 100;
+}
+
+#win-box{
+    margin:  auto;
+    display: none;
+}
+
+#winner-background{
+    display: flex;
+    justify-content: space-around;
+    grid:180px;
+    margin-top: -130px;
+    z-index: -1;
+    
+}
+
+#user-Winner-Background{
+    opacity: 0;
+}
+
+#comp-Winner-Background{
+    opacity: 0;
 }

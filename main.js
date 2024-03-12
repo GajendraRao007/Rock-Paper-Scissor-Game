@@ -14,7 +14,7 @@ cancelButton.addEventListener('click',()=>{
     rulesBox.style.display = 'none';
 })
 
-//Picked options
+//UserPicked options
 let userpickedRock = document.getElementById('rockbtn');
 let userpickedPaper =  document.getElementById('paperbtn');
 let userpickedScissor = document.getElementById('scissorbtn');
@@ -29,9 +29,13 @@ function userPicked(playerPicked) {
     let showRound = document.getElementById('match-area');
     showRound.style.display = 'flex';
     showRound.style.justifyContent = 'space-around';
+    showRound.style.marginTop = '-330px';
 
     let showTitle = document.getElementById('match-title');
     showTitle.style.display = 'flex';
+
+    let winbox = document.getElementById('win-box')
+    winbox.style.display = 'block'
 
     play(playerPicked);
 }
@@ -75,16 +79,23 @@ function computerPicked() {
 }
 
 
-// Function to see who is the winner, loser or tie & display scores for user & comp
+// Function to see who is the winner, loser or the game is tie & display scores for user & comp
 let userScore = 0;
 let compScore = 0;
 
+//adding the green background for the winner
+let userWinnerBackground ;
+let compWinnerBackground;
 
 function play(playerPicked) {
     let computerpickedRandom = computerPicked();
     
     let userScoreDisplay = document.getElementById('User-Score-display');
     let compScoreDisplay = document.getElementById('Comp-Score-display');
+
+    let userWinnerBackground = document.getElementById('user-Winner-Background');
+    let compWinnerBackground = document.getElementById('comp-Winner-Background');
+
     let resultElement = document.getElementById('result');
 
     if (playerPicked === computerpickedRandom) {
@@ -96,12 +107,16 @@ function play(playerPicked) {
     ) {
         resultElement.innerText = "YOU WIN";
         userScore++
+        userWinnerBackground.style.opacity="100";
+      
+
     } else {
         resultElement.innerText = "YOU LOST";
         compScore++
+        compWinnerBackground.style.opacity="100";
+       
     }
 
-    
     userScoreDisplay.innerText = userScore;
     compScoreDisplay.innerText = compScore;
 }
