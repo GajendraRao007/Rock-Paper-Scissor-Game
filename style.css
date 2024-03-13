@@ -7,7 +7,7 @@ body{
     font-family: "Roboto", sans-serif;
     
 }
-
+/****************************************Display Scores css*******************************************/
 .box{
     border: 2px solid white;
     width: 800px;
@@ -67,6 +67,8 @@ h1{
     display: flex;
     
 }
+
+/**********************************Rules box css************************************************************/
 
 #rules-box{
     background-color: #004429;
@@ -133,7 +135,7 @@ li::marker {
     margin-right: 38px;
     cursor: pointer;
 }
-
+/**********************************NEXT BUTTON css************************************************************/
 #Next-btn{
     padding: 10px 30px;
     font-size: 21px;
@@ -146,6 +148,8 @@ li::marker {
     cursor: pointer;
     display: none;
 }
+
+/**********************************Selcect Options/Buttons css************************************************************/
 
 .options{
     display: none;
@@ -186,7 +190,7 @@ li::marker {
 }
 
 
-/*Match area*/
+/*******************************************Match area**************************************/
 
 #match-area{
     align-items: center;
@@ -223,6 +227,7 @@ li::marker {
     letter-spacing: 2px;
     color: white;
     font-weight: 800;
+    display: inline-flex;
 }
 
 
@@ -243,7 +248,7 @@ h5{
     display: none;
     z-index: 100;
 }
-
+/******************************************Winners highlight background**********************************/
 #win-box{
     margin:  auto;
     display: none;
@@ -266,7 +271,7 @@ h5{
     opacity: 0;
 }
 
-/*Winners Page*/
+/*****************************************Winners/Trophy Page*******************************************/
 
 #Winner-page{
    margin: 0 auto;
@@ -286,7 +291,7 @@ h5{
     color: white;
     margin-top: 25px;
 }
-
+/*****************************************Play again btn winner page css*******************************************/
 #play-again-btn-win-page{
     display: block;
     margin: 50px auto;
@@ -298,6 +303,7 @@ h5{
     cursor: pointer;
 }
 
+/*****************************************Rules btn winner page css*******************************************/
 #Rules-btn-win-page{
     padding: 10px 30px;
     font-size: 21px;

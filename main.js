@@ -22,7 +22,7 @@ let userpickedScissor = document.getElementById('scissorbtn');
 
 userpickedRock.addEventListener('click', ()=>{
     let displayElement = document.getElementById('you-picked');
-    displayElement.innerHTML = `<img src="Images/Group 6.png" alt="Rock" srcset="">`;
+    displayElement.innerHTML = `<img src="Images/Rock.png" alt="Rock" srcset="">`;
 
     let options = document.getElementById('options');
     options.style.display = 'none';
@@ -44,7 +44,7 @@ userpickedRock.addEventListener('click', ()=>{
 
 userpickedPaper.addEventListener('click', ()=>{
     let displayElement = document.getElementById('you-picked');
-    displayElement.innerHTML = `<img src="Images/Group 8.png" alt="Paper" srcset="">`;
+    displayElement.innerHTML = `<img src="Images/Paper.png" alt="Paper" srcset="">`;
 
     let options = document.getElementById('options');
     options.style.display = 'none';
@@ -66,7 +66,7 @@ userpickedPaper.addEventListener('click', ()=>{
 
 userpickedScissor.addEventListener('click', ()=>{
     let displayElement = document.getElementById('you-picked');
-    displayElement.innerHTML = `<img src="Images/Group 7.png" alt="Scissor" srcset="">`;
+    displayElement.innerHTML = `<img src="Images/Scissor.png" alt="Scissor" srcset="">`;
 
     let options = document.getElementById('options');
     options.style.display = 'none';
@@ -87,7 +87,6 @@ userpickedScissor.addEventListener('click', ()=>{
 
 
 //computer selects/picks the random button rock, paper or scissor
-
 let compicked = ['Rock', 'Paper', 'Scissor'];
 
     compickedIndex = Math.floor(Math.random()* compicked.length);
@@ -96,11 +95,11 @@ let compicked = ['Rock', 'Paper', 'Scissor'];
     let compickedRandom = compicked[compickedIndex];
 
     if(compickedRandom == 'Rock'){
-        comDisplay.innerHTML = '<img src="Images/Group 6.png" alt="Rock" srcset="">';
+        comDisplay.innerHTML = '<img src="Images/Rock.png" alt="Rock" srcset="">';
     }else if(compickedRandom == 'Paper'){
-        comDisplay.innerHTML = '<img src="Images/Group 8.png" alt="Paper" srcset="">';
+        comDisplay.innerHTML = '<img src="Images/Paper.png" alt="Paper" srcset="">';
     }else if(compickedRandom == 'Scissor'){
-        comDisplay.innerHTML = '<img src="Images/Group 7.png" alt="Scissor" srcset="">';
+        comDisplay.innerHTML = '<img src="Images/Scissor.png" alt="Scissor" srcset="">';
     }
 
 
@@ -135,18 +134,20 @@ function play() {
         (playerPicked === 'Paper' && compickedRandom === 'Rock') ||
         (playerPicked === 'Scissor' && compickedRandom === 'Paper')
     ) {
-        resultElement.innerText = "YOU WIN";
+        resultElement.innerHTML = `YOU WIN <br> <span class="txt">AGAINST PC</span>`;
         userScore++;
         userWinnerBackground.style.opacity = "100";
         nextButton.style.display = 'inline-flex';
     } else {
-        resultElement.innerText = "YOU LOST";
+        resultElement.innerHTML = `YOU LOST <br> <span class="txt">AGAINST PC</span>`;
         compScore++;
         compWinnerBackground.style.opacity = "100";
     }
 
     userScoreDisplay.innerText = userScore;
     compScoreDisplay.innerText = compScore;
+
+    saveScore();
 }
 
 
@@ -187,5 +188,37 @@ let playagain = document.getElementById('play-again');
 
 playagain.addEventListener('click',()=>{
     location.reload();
+    saveScore();
 })
 
+//play again button function winner page
+
+let playagainwinnerPage = document.getElementById('play-again-btn-win-page');
+
+playagainwinnerPage.addEventListener('click',()=>{
+    location.reload();
+    saveScore();
+})
+
+
+// function to save scores in localstorage
+
+function saveScore(){
+    localStorage.setItem('userScore', userScore);
+    localStorage.setItem('compScore', compScore);
+}
+
+function showScore(){
+    let userScoreDisplay = document.getElementById('User-Score-display');
+    let compScoreDisplay = document.getElementById('Comp-Score-display');
+
+    userScore = parseInt(localStorage.getItem('userScore')) || 0;
+    compScore = parseInt(localStorage.getItem('compScore')) || 0;
+
+    userScoreDisplay.innerText = userScore;
+    compScoreDisplay.innerText = compScore;
+} 
+
+window.onload = function () {
+    showScore();
+}
