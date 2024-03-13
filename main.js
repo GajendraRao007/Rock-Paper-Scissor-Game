@@ -19,9 +19,10 @@ let userpickedRock = document.getElementById('rockbtn');
 let userpickedPaper =  document.getElementById('paperbtn');
 let userpickedScissor = document.getElementById('scissorbtn');
 
-function userPicked(playerPicked) {
+
+userpickedRock.addEventListener('click', ()=>{
     let displayElement = document.getElementById('you-picked');
-    displayElement.innerHTML = `<img src="Images/Group ${imgNum(playerPicked)}.png" srcset="">`;
+    displayElement.innerHTML = `<img src="Images/Group 6.png" alt="Rock" srcset="">`;
 
     let options = document.getElementById('options');
     options.style.display = 'none';
@@ -37,46 +38,70 @@ function userPicked(playerPicked) {
     let winbox = document.getElementById('win-box')
     winbox.style.display = 'block'
 
-    play(playerPicked);
-}
-
-// Function to get the image number 
-function imgNum(playerPicked) {
-    if (playerPicked === 'pickedRock') {
-        return 6;
-    }
-    if (playerPicked === 'pickedPaper') {
-        return 8;
-    }
-    if (playerPicked === 'pickedScissor') {
-        return 7;
-    }
-}
-
-userpickedRock.addEventListener('click',function(){
-    console.log('clicked rock button');
-    userPicked('pickedRock')
+    play()
 })
-userpickedPaper.addEventListener('click',function(){
-    console.log('clicked paper button');
-    userPicked('pickedPaper')
+
+
+userpickedPaper.addEventListener('click', ()=>{
+    let displayElement = document.getElementById('you-picked');
+    displayElement.innerHTML = `<img src="Images/Group 8.png" alt="Paper" srcset="">`;
+
+    let options = document.getElementById('options');
+    options.style.display = 'none';
+
+    let showRound = document.getElementById('match-area');
+    showRound.style.display = 'flex';
+    showRound.style.justifyContent = 'space-around';
+    showRound.style.marginTop = '-330px';
+
+    let showTitle = document.getElementById('match-title');
+    showTitle.style.display = 'flex';
+
+    let winbox = document.getElementById('win-box')
+    winbox.style.display = 'block'
+
+    play()
 })
-userpickedScissor.addEventListener('click',function(){
-    console.log('clicked scissor button');
-    userPicked('pickedScissor')
+
+
+userpickedScissor.addEventListener('click', ()=>{
+    let displayElement = document.getElementById('you-picked');
+    displayElement.innerHTML = `<img src="Images/Group 7.png" alt="Scissor" srcset="">`;
+
+    let options = document.getElementById('options');
+    options.style.display = 'none';
+
+    let showRound = document.getElementById('match-area');
+    showRound.style.display = 'flex';
+    showRound.style.justifyContent = 'space-around';
+    showRound.style.marginTop = '-330px';
+
+    let showTitle = document.getElementById('match-title');
+    showTitle.style.display = 'flex';
+
+    let winbox = document.getElementById('win-box')
+    winbox.style.display = 'block'
+
+    play()
 })
 
 
 //computer selects/picks the random button rock, paper or scissor
-function computerPicked() {
-    let compPicked = ['pickedRock', 'pickedPaper', 'pickedScissor'];
-    let computerpickedRandom = compPicked[Math.floor(Math.random() * compPicked.length)];
 
-    let displayElement = document.getElementById('Pc-picked');
-    displayElement.innerHTML = `<img src="Images/Group ${imgNum(computerpickedRandom)}.png" alt="" srcset="">`;
+let compicked = ['Rock', 'Paper', 'Scissor'];
 
-    return computerpickedRandom;
-}
+    compickedIndex = Math.floor(Math.random()* compicked.length);
+
+    let comDisplay = document.getElementById('Pc-picked');
+    let compickedRandom = compicked[compickedIndex];
+
+    if(compickedRandom == 'Rock'){
+        comDisplay.innerHTML = '<img src="Images/Group 6.png" alt="Rock" srcset="">';
+    }else if(compickedRandom == 'Paper'){
+        comDisplay.innerHTML = '<img src="Images/Group 8.png" alt="Paper" srcset="">';
+    }else if(compickedRandom == 'Scissor'){
+        comDisplay.innerHTML = '<img src="Images/Group 7.png" alt="Scissor" srcset="">';
+    }
 
 
 // Function to see who is the winner, loser or the game is tie & display scores for user & comp
@@ -90,9 +115,9 @@ let compWinnerBackground;
 //Next btn when the user wins the round
 let nextButton = document.getElementById('Next-btn');
 
-function play(playerPicked) {
-    let computerpickedRandom = computerPicked();
-    
+function play() {
+    let playerPicked = document.getElementById("you-picked").querySelector('img').alt;
+
     let userScoreDisplay = document.getElementById('User-Score-display');
     let compScoreDisplay = document.getElementById('Comp-Score-display');
 
@@ -100,36 +125,33 @@ function play(playerPicked) {
     let compWinnerBackground = document.getElementById('comp-Winner-Background');
 
     let resultElement = document.getElementById('result');
+    let playbuttonTextChange = document.getElementById('play-again');
 
-    //PLAY AGAIN button text should be changed to REPLAY when the round  is TIE
-    let playbuttonTextChange = document.getElementById('play-again')
-
-    if (playerPicked === computerpickedRandom) {
-        resultElement.innerText = "TIE UP";
+    if (playerPicked === compickedRandom) {
+        resultElement.innerText = "TIE";
         playbuttonTextChange.innerText = "REPLAY";
     } else if (
-        (playerPicked === 'pickedRock' && computerpickedRandom === 'pickedScissor') ||
-        (playerPicked === 'pickedPaper' && computerpickedRandom === 'pickedRock') ||
-        (playerPicked === 'pickedScissor' && computerpickedRandom === 'pickedPaper')
+        (playerPicked === 'Rock' && compickedRandom === 'Scissor') ||
+        (playerPicked === 'Paper' && compickedRandom === 'Rock') ||
+        (playerPicked === 'Scissor' && compickedRandom === 'Paper')
     ) {
         resultElement.innerText = "YOU WIN";
-        userScore++
-        userWinnerBackground.style.opacity="100";
+        userScore++;
+        userWinnerBackground.style.opacity = "100";
         nextButton.style.display = 'inline-flex';
-
     } else {
         resultElement.innerText = "YOU LOST";
-        compScore++
-        compWinnerBackground.style.opacity="100";
-       
+        compScore++;
+        compWinnerBackground.style.opacity = "100";
     }
 
     userScoreDisplay.innerText = userScore;
     compScoreDisplay.innerText = compScore;
 }
 
+
 //function to display the Winner's/Trophy Page  
- 
+
 nextButton.addEventListener('click', ()=>{
     let container = document.querySelector('.container')
     container.style.display ='none';
@@ -140,6 +162,7 @@ nextButton.addEventListener('click', ()=>{
     let displayRulebtn = document.getElementById('Rules-btn')
     displayRulebtn.style.display = 'block';
 });
+
 
 //rule button for winners page
 
