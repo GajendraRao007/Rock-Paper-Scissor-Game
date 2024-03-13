@@ -156,3 +156,13 @@ cancelButtonWinnerPage.addEventListener('click',()=>{
     console.log('cancel button clicked');
     rulesBoxWinnerPage.style.display = 'none';
 })
+
+
+//play again & Replay button function
+
+let playagain = document.getElementById('play-again');
+
+playagain.addEventListener('click',()=>{
+    location.reload();
+})
+

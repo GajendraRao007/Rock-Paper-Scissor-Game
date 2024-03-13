@@ -221,7 +221,10 @@ li::marker {
 .txt{
     font-size: 20px;
     letter-spacing: 2px;
+    color: white;
+    font-weight: 800;
 }
+
 
 h5{
     font-size: 17px;
